@@ -1,5 +1,3 @@
-require 'twitter'
-
 class Rubybot
   YOUR_CONSUMER_KEY = 'DISu9hfmtzmQOMQZPPcktZPmA'.freeze
   YOUR_CONSUMER_SECRET = 'hlrHzO4J49HJrDcGhTMZI73YagLcWQNEakiSAl5P71NbqFlCfF'.freeze
