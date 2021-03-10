@@ -14,4 +14,16 @@ class Rubybot
       config.access_token_secret = YOUR_ACCESS_SECRET
     end
   end
+
+  def reply_to(last_mention, message)
+    @client.update("@#{last_mention.user.screen_name} #{message}", { in_reply_to_status_id: last_mention.id })
+  end
+
+  def fetch_mentions
+    @client.mentions_timeline
+  end
+
+  def tweet(id)
+    @client.status(id)
+  end
 end
