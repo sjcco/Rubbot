@@ -52,7 +52,7 @@ anything else Won't be responded
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/sjcco).
+Feel free to check the [issues page](https://github.com/sjcco/Rubbot/issues).
 
 ## Show your support
 
