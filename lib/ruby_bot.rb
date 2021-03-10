@@ -31,4 +31,8 @@ class Rubybot
   def tweet(id)
     @client.status(id)
   end
+
+  def my_follow(user_id)
+    @client.follow(user_id)
+  end
 end
