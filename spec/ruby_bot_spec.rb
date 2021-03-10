@@ -1,5 +1,5 @@
 require_relative '../lib/ruby_bot'
-require twitter
+require 'twitter'
 
 describe Rubybot do
   describe '#initialize' do
