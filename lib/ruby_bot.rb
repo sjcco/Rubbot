@@ -16,7 +16,12 @@ class Rubybot
   end
 
   def reply_to(last_mention, message)
-    @client.update("@#{last_mention.user.screen_name} #{message}", { in_reply_to_status_id: last_mention.id })
+    if message != 'do not reply'
+      puts 'Replied message to user'
+      @client.update("@#{last_mention.user.screen_name} #{message}", { in_reply_to_status_id: last_mention.id })
+    else
+      puts "Did not reply to - #{last_mention.id}"
+    end
   end
 
   def fetch_mentions
