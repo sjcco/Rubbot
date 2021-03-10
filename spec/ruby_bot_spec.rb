@@ -25,4 +25,14 @@ describe Rubybot do
       end
     end
   end
+
+  describe '#fetch_mentions' do
+    bot = Rubybot.new
+    it 'Returns an array' do
+      expect(bot.fetch_mentions.class).to be(Array)
+    end
+    it 'Array is composed of tweet objects' do
+      expect(bot.fetch_mentions.all?(Twitter::Tweet)).to be(true)
+    end
+  end
 end
