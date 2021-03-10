@@ -1,10 +1,10 @@
 require 'twitter'
 
 class Rubybot
-  YOUR_CONSUMER_KEY = ''.freeze
-  YOUR_CONSUMER_SECRET = ''.freeze
-  YOUR_ACCESS_TOKEN = ''.freeze
-  YOUR_ACCESS_SECRET = ''.freeze
+  YOUR_CONSUMER_KEY = 'DISu9hfmtzmQOMQZPPcktZPmA'.freeze
+  YOUR_CONSUMER_SECRET = 'hlrHzO4J49HJrDcGhTMZI73YagLcWQNEakiSAl5P71NbqFlCfF'.freeze
+  YOUR_ACCESS_TOKEN = '390469327-1zaUXVOBcWY49Q5Nww7WPAjLFCEuygNg2wy95QYj'.freeze
+  YOUR_ACCESS_SECRET = '7zTjZGrc8b6UP8jurvdzfldr7TIAJlmL9LHgrouJHIW8j'.freeze
 
   attr_reader :client
 
