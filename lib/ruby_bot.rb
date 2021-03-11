@@ -33,7 +33,7 @@ class Rubybot
     new_tweet = tweet(id.to_i)
     user = new_tweet.user
     if new_tweet.text.downcase.match?(/#followme/)
-      bot.my_follow(user)
+      my_follow(user)
       puts "Now following #{user.screen_name}"
     else
       puts 'No one to follow'
