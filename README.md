@@ -6,6 +6,12 @@
 
 A simple Twitter made with ruby. The bot is capable of responding to certain messages and follow users automatically
 
+![screenshot](./assets/app_screenshot.png)
+
+## live demo
+
+[video](https://youtu.be/JgnmrqWmla8)
+
 ## Built With
 
 - Ruby
