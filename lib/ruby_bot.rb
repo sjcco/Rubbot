@@ -18,11 +18,24 @@ class Rubybot
 
   def replies_to_tweets
     puts 'Fetching mentions'
-    mentions = fetch_mentions
-    next_mention = get_next_mention(mentions, bot)
+    @mentions = fetch mentions
+    next_mention = get_next_mention(@mentions)
     message = get_message(next_mention)
     reply_to(next_mention, message)
     store_last_id(next_mention)
+  end
+
+  def get_next_mention(mentions)
+    last_id = retrieve_id
+    mentions_ids = mentions.map(&:id)
+    return tweet(last_id) unless mentions_ids.include?(last_id.to_i)
+
+    return tweet(last_id) if mentions_ids[0] == last_id.to_i
+
+    mentions_ids = mentions_ids.reverse
+    index = 0
+    mentions_ids.each_with_index { |mention, indx| index = indx + 1 if mention == last_id.to_i }
+    tweet(mentions_ids[index])
   end
 
   def reply_to(last_mention, message)
