@@ -8,20 +8,6 @@ def retrieve_id
   id
 end
 
-def get_next_mention(mentions, bot)
-  last_id = retrieve_id
-  mentions_ids = []
-  mentions.each { |mention| mentions_ids << mention.id }
-  return bot.tweet(last_id) unless mentions_ids.include?(last_id.to_i)
-
-  return bot.tweet(last_id) if mentions_ids[0] == last_id.to_i
-
-  mentions_ids = mentions_ids.reverse
-  index = 0
-  mentions_ids.each_with_index { |mention, indx| index = indx + 1 if mention == last_id.to_i }
-  bot.tweet(mentions_ids[index])
-end
-
 # rubocop: disable Style/EmptyCaseCondition
 def get_message(mention)
   case
