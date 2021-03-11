@@ -43,18 +43,6 @@ def store_last_id(mention)
   file.close
 end
 
-def replies_to_tweets(bot)
-  # fecth mentions
-  puts 'Fetching mentions'
-  mentions = bot.fetch_mentions
-  # compare to last mention stored and reply to last mention
-  next_mention = get_next_mention(mentions, bot)
-  message = get_message(next_mention)
-  bot.reply_to(next_mention, message)
-  # store new last mention
-  store_last_id(next_mention)
-end
-
 def follow_tweet_usr(bot)
   id = retrieve_id
   new_tweet = bot.tweet(id.to_i)
@@ -68,8 +56,8 @@ def follow_tweet_usr(bot)
 end
 
 bot = Rubybot.new
-loop do
-  replies_to_tweets(bot)
+
+  bot.replies_to_tweets
   follow_tweet_usr(bot)
   sleep(5)
-end
+

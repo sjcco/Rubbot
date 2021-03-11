@@ -13,6 +13,16 @@ class Rubybot
       config.access_token = YOUR_ACCESS_TOKEN
       config.access_token_secret = YOUR_ACCESS_SECRET
     end
+    @mentions = []
+  end
+
+  def replies_to_tweets
+    puts 'Fetching mentions'
+    mentions = fetch_mentions
+    next_mention = get_next_mention(mentions, bot)
+    message = get_message(next_mention)
+    reply_to(next_mention, message)
+    store_last_id(next_mention)
   end
 
   def reply_to(last_mention, message)
