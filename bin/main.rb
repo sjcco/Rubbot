@@ -29,21 +29,9 @@ def store_last_id(mention)
   file.close
 end
 
-def follow_tweet_usr(bot)
-  id = retrieve_id
-  new_tweet = bot.tweet(id.to_i)
-  user = new_tweet.user
-  if new_tweet.text.downcase.match?(/#followme/)
-    bot.my_follow(user)
-    puts "Now following #{user.screen_name}"
-  else
-    puts 'No one to follow'
-  end
-end
-
 bot = Rubybot.new
 
   bot.replies_to_tweets
-  follow_tweet_usr(bot)
+  bot.follow_tweet_usr
   sleep(5)
 
