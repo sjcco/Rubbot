@@ -12,7 +12,7 @@ A simple Twitter made with ruby. The bot is capable of responding to certain mes
 
 ## Getting Started
 
-- Run this command in your OS terminal: git clone https://github.com/sjcco/Rubbotto get a copy of the project.
+- Run this command in your OS terminal: git clone https://github.com/sjcco/Rubbot get a copy of the project.
 - To run this file you either need to have Ruby installed on your local system, or you can use an online Ruby interpreter to run this code.
 
 ### Prerequisites
@@ -22,13 +22,13 @@ A simple Twitter made with ruby. The bot is capable of responding to certain mes
 
 ### Setup
 
-- Clone repository
-- Install Twitter gem
+- Clone repository by running ''' git clone https://github.com/sjcco/Rubbot '''
+- Install Twitter gem by running ''' gem install twitter -v 6.2.0 '''
 
 ## Instructions
 
 - Run the main.rb file
-- After that any mention to @CarlosCamposO with the appropiate Hashtag will be responded as follows
+- After that any mention on twitter to @CarlosCamposO with the appropiate Hashtag will be responded as follows
 
 -- #Hashtag ----response
 #hello #Hello to you too
