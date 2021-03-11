@@ -27,6 +27,18 @@ class Rubybot
     store_last_id(next_mention)
   end
 
+  def follow_tweet_usr
+    id = retrieve_id
+    new_tweet = tweet(id.to_i)
+    user = new_tweet.user
+    if new_tweet.text.downcase.match?(/#followme/)
+      bot.my_follow(user)
+      puts "Now following #{user.screen_name}"
+    else
+      puts 'No one to follow'
+    end
+  end
+
   def get_next_mention(mentions)
     last_id = retrieve_id
     mentions_ids = mentions.map(&:id)
