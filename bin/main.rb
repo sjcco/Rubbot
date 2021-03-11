@@ -2,7 +2,7 @@ require 'twitter'
 require_relative '../lib/ruby_bot'
 
 def retrieve_id
-  file = File.open('./stored_ids.txt')
+  file = File.open('stored_ids.txt')
   id = file.read
   file.close
   id
