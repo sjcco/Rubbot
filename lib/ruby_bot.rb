@@ -14,6 +14,7 @@ class Rubybot
       config.access_token_secret = YOUR_ACCESS_SECRET
     end
     @mentions = []
+    @last_reply = 0
   end
 
   def replies_to_tweets
@@ -39,6 +40,23 @@ class Rubybot
     end
   end
 
+  # rubocop: disable Style/EmptyCaseCondition
+  def get_message(mention)
+    return 'do not reply' if mention.id == @last_reply
+
+    case
+    when mention.text.downcase.match?(/#hello/)
+      '#Hello to you too'
+    when mention.text.downcase.match?(/#iamarobot/)
+      'I\'m also a Robot'
+    when mention.text.downcase.match?(/#followme/)
+      'Yes I\'ll follow you'
+    else
+      'do not reply'
+    end
+  end
+  # rubocop: enable Style/EmptyCaseCondition
+
   def get_next_mention(mentions)
     last_id = retrieve_id
     mentions_ids = mentions.map(&:id)
@@ -55,6 +73,7 @@ class Rubybot
   def reply_to(last_mention, message)
     if message != 'do not reply'
       puts 'Replied message to user'
+      @last_reply = last_mention.id
       @client.update("@#{last_mention.user.screen_name} #{message}", { in_reply_to_status_id: last_mention.id })
     else
       puts "Did not reply to - #{last_mention.id}"
