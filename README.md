@@ -4,7 +4,7 @@
 
 > Rubybot
 
-A simple Twitter made with ruby. The bot is cable of responding to certain messages and follow users automatically
+A simple Twitter made with ruby. The bot is capable of responding to certain messages and follow users automatically
 
 ## Built With
 
