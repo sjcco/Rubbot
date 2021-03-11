@@ -41,6 +41,7 @@ class Rubybot
   end
 
   private
+
   # rubocop: disable Style/EmptyCaseCondition
   def get_message(mention)
     return 'do not reply' if mention.id == @last_reply
