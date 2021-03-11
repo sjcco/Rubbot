@@ -18,7 +18,9 @@ class Rubybot
 
   def replies_to_tweets
     puts 'Fetching mentions'
-    @mentions = fetch mentions
+    last_id = retrieve_id
+    mentions_ids = @mentions.map(&:id)
+    @mentions = fetch_mentions if @mentions.empty? || mentions_ids[0] == last_id.to_i
     next_mention = get_next_mention(@mentions)
     message = get_message(next_mention)
     reply_to(next_mention, message)
