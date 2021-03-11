@@ -22,24 +22,24 @@ A simple Twitter made with ruby. The bot is capable of responding to certain mes
 
 ### Setup
 
-- Clone repository by running ``` git clone https://github.com/sjcco/Rubbot ```
-- Install Twitter gem by running ``` gem install twitter -v 6.2.0 ```
+- Clone repository by running `git clone https://github.com/sjcco/Rubbot`
+- Install Twitter gem by running `gem install twitter -v 6.2.0`
 
 ## Instructions
 
 - Run the main.rb file
-- After that any mention on twitter to @CarlosCamposO with the appropiate Hashtag will be responded as follows
+- After that any mention on twitter to @CarlosCamposO with the appropiate Hashtag and it will be responded on twitter as follows
 
--- #Hashtag            ----response
-#hello                 #Hello to you too
-#iamarobot             I'm also a Robot
-#followme              Yes I'll follow you
-anything else          Won't be responded
+-- #Hashtag ----response
+#hello @user #Hello to you too
+#iamarobot @user I'm also a Robot
+#followme @user Yes I'll follow you
+anything else @user Won't be responded
 
 ## Testing Instructions
 
-- In the terminal use ```rspec``` to run the tests
-- For a more detailed explanation of the tests run ```rspec --format documentation```
+- In the terminal use `rspec` to run the tests
+- For a more detailed explanation of the tests run `rspec --format documentation`
 
 ## Authors
 
