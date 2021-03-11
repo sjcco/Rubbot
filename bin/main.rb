@@ -8,21 +8,6 @@ def retrieve_id
   id
 end
 
-# rubocop: disable Style/EmptyCaseCondition
-def get_message(mention)
-  case
-  when mention.text.downcase.match?(/#hello/)
-    '#Hello to you too'
-  when mention.text.downcase.match?(/#iamarobot/)
-    'I\'m also a Robot'
-  when mention.text.downcase.match?(/#followme/)
-    'Yes I\'ll follow you'
-  else
-    'do not reply'
-  end
-end
-# rubocop: enable Style/EmptyCaseCondition
-
 def store_last_id(mention)
   file = File.open('stored_ids.txt', mode: 'w')
   file.write(mention.id.to_s)
@@ -30,8 +15,8 @@ def store_last_id(mention)
 end
 
 bot = Rubybot.new
-
+loop do
   bot.replies_to_tweets
   bot.follow_tweet_usr
-  sleep(5)
-
+  sleep(15)
+end
