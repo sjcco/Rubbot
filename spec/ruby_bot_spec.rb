@@ -31,7 +31,7 @@ describe Rubybot do
       expect(bot.get_message(new_tweet)).to eql('Yes I\'ll follow you')
     end
     it 'Returns do not reply' do
-      new_tweet = bot.post_tweet(rand(1..1000).to_s)
+      new_tweet = bot.post_tweet("#{rand(1..1000)} dont reply")
       expect(bot.get_message(new_tweet)).to eql('do not reply')
     end
   end
