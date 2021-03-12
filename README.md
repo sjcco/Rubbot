@@ -4,7 +4,13 @@
 
 > Rubybot
 
-A simple Twitter made with ruby. The bot is cable of responding to certain messages and follow users automatically
+A simple Twitter made with ruby. The bot is capable of responding to certain messages and follow users automatically
+
+![screenshot](./assets/app_screenshot.png)
+
+## live demo
+
+[video](https://youtu.be/JgnmrqWmla8)
 
 ## Built With
 
@@ -12,7 +18,7 @@ A simple Twitter made with ruby. The bot is cable of responding to certain messa
 
 ## Getting Started
 
-- Run this command in your OS terminal: git clone https://github.com/sjcco/Rubbotto get a copy of the project.
+- Run this command in your OS terminal: git clone https://github.com/sjcco/Rubbot get a copy of the project.
 - To run this file you either need to have Ruby installed on your local system, or you can use an online Ruby interpreter to run this code.
 
 ### Prerequisites
@@ -22,24 +28,24 @@ A simple Twitter made with ruby. The bot is cable of responding to certain messa
 
 ### Setup
 
-- Clone repository
-- Install Twitter gem
+- Clone repository by running `git clone https://github.com/sjcco/Rubbot`
+- Install Twitter gem by running `gem install twitter -v 6.2.0`
 
 ## Instructions
 
 - Run the main.rb file
-- After that any mention to @CarlosCamposO with the appropiate Hashtag will be responded as follows
+- After that any mention on twitter to @CarlosCamposO with the appropiate Hashtag and it will be responded on twitter as follows
 
 -- #Hashtag ----response
-#hello #Hello to you too
-#iamarobot I'm also a Robot
-#followme Yes I'll follow you
-anything else Won't be responded
+#hello @user #Hello to you too
+#iamarobot @user I'm also a Robot
+#followme @user Yes I'll follow you
+anything else @user Won't be responded
 
 ## Testing Instructions
 
-- In the terminal use 'rspec' to run the tests
-- For a more detailed explanation of the tests run 'rspec --format documentation'
+- In the terminal use `rspec` to run the tests
+- For a more detailed explanation of the tests run `rspec --format documentation`
 
 ## Authors
 
@@ -52,7 +58,7 @@ anything else Won't be responded
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/sjcco).
+Feel free to check the [issues page](https://github.com/sjcco/Rubbot/issues).
 
 ## Show your support
 
@@ -64,4 +70,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](lic.url) licensed.
+This project is [MIT](LICENSE.txt) licensed.

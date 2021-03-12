@@ -9,30 +9,39 @@ describe Rubybot do
     end
   end
 
-  describe '#reply_to' do
+  describe '#post_tweet' do
     bot = Rubybot.new
-    rspec_tweet = 1_369_754_168_685_166_593
-    context 'When a message is replied' do
-      it 'Replies one of the premade messages' do
-        tweet = bot.reply_to(bot.tweet(rspec_tweet), 'rspec test')
-        expect(tweet.class).to be(Twitter::Tweet)
-      end
-    end
-    context 'When no message is replied' do
-      it 'Does not replies message' do
-        tweet = bot.reply_to(bot.tweet(rspec_tweet), 'do not reply')
-        expect(tweet.class).to be(nil.class)
-      end
+    it 'Returns tweet object' do
+      expect(bot.post_tweet(rand(1..1000).to_s).class).to be(Twitter::Tweet)
     end
   end
 
-  describe '#fetch_mentions' do
+  describe '#get_message' do
     bot = Rubybot.new
-    it 'Returns an array' do
-      expect(bot.fetch_mentions.class).to be(Array)
+    def store_id(mention)
+      file = File.open('stored_ids.txt', mode: 'w')
+      file.write(mention.id.to_s)
+      file.close
     end
-    it 'Array is composed of tweet objects' do
-      expect(bot.fetch_mentions.all?(Twitter::Tweet)).to be(true)
+    it 'Returns hello' do
+      new_tweet = bot.post_tweet("#{rand(1..1000)} #hello")
+      store_id(new_tweet)
+      expect(bot.get_message(new_tweet)).to eql('#Hello to you too')
+    end
+    it 'Returns I\'m also a robot' do
+      new_tweet = bot.post_tweet("#{rand(1..1000)} #iamarobot")
+      store_id(new_tweet)
+      expect(bot.get_message(new_tweet)).to eql('I\'m also a Robot')
+    end
+    it 'Returns I\'ll follow' do
+      new_tweet = bot.post_tweet("#{rand(1..1000)} #followme")
+      store_id(new_tweet)
+      expect(bot.get_message(new_tweet)).to eql('Yes I\'ll follow you')
+    end
+    it 'Returns do not reply' do
+      new_tweet = bot.post_tweet("#{rand(1..1000)} dont reply")
+      store_id(new_tweet)
+      expect(bot.get_message(new_tweet)).to eql('do not reply')
     end
   end
 end
